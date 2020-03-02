@@ -1,6 +1,5 @@
 [![Build Status](https://travis-ci.com/samaq-ai/cdn.svg?branch=master)](https://travis-ci.com/samaq-ai/cdn)
-![Sama Business Services IO](https://github.com/samaq-ai/cdn/workflows/Laravel/badge.svg)
-
+![Sama Business Service IO](https://github.com/samaq-ai/cdn/workflows/Sama%20Business%20Service%20Framework/badge.svg)
 ## sbs
 Sama Business Services Framework
 
