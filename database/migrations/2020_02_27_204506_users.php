@@ -19,8 +19,8 @@ class Users extends Migration
             $table->string('email');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('idnumber');
-            $table->integer('phonenumber');
+            $table->string('idnumber')->nullable();
+            $table->integer('phonenumber')->nullable();
             $table->string('qr')->default('default.png');
             $table->string('photo')->default('default.svg');
             $table->tinyInteger('is_permission')->default('0');
