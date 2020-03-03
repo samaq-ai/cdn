@@ -1,0 +1,28 @@
+
+.col-xs-4 {
+    background-color: #ffffff;
+}
+
+@media (max-width: 400px) {
+.col-xs-4 {
+    float: right;
+    }
+}
+
+.col-xs-3 {
+    background-color: #ffffff;
+
+}
+
+@media (min-width: 300px) {
+.col-xs-3 {
+    text-align:center;
+    }
+}
+
+
+.clearfix::after {
+  display: block;
+  clear: both;
+  content: "";
+}

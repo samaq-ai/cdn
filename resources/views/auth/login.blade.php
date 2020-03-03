@@ -65,6 +65,11 @@
                             </div>
                         </div>
                     </form>
+                    </br></br>  
+                    <div class="container">
+                        <span style="color:red"><i class="fas fa-fingerprint"></i></span>&nbsp;&nbsp; <span>Touch Login Enabled</span></br>
+                        <span style="color:green"><i class="fas fa-lock"></i></span>&nbsp;&nbsp; <span>Secure Login Enabled</span>
+                    </div>
                 </div>
             </div>
         </div>
