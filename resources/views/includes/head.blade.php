@@ -16,6 +16,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('oi/font/css/open-iconic-bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('css/sama.css') }}" rel="stylesheet">
     <script src="{{ asset('js/bootstrap.js') }}" defer></script>
     <script src="{{ asset('js/jquery-3.3.1.min.js') }}" defer></script>

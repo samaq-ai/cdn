@@ -41,3 +41,21 @@ npm i saman-io
 * rails 5.2.3
 * travis 1.8.10
 * cpan 1.03
+
+
+
+#### Admin
+
+1. Install Package using composer command.
+
+```
+composer require "dwij/laraadmin:1.0.40"
+```
+
+2. Add LaraAdmin Service provider in config/app.php :
+```
+'providers' => [
+	...
+	Dwij\Laraadmin\LAProvider::class
+],
+```

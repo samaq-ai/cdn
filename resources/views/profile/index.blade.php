@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.sama')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Profile</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,10 +14,7 @@
                         </div>
                     @endif
 
-                    Welcome to your dashboard.
-
-
-
+                    <span>Confirm your email address, <a href="#">resend confirmation link.</a></span>
 
                 </div>
             </div>
