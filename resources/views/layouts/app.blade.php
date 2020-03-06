@@ -1,156 +1,78 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> 
-
-    <!-- CSRF Token -->
+    <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>{{ __('Sama Business Services') }}</title>
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('material') }}/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="{{ asset('material') }}/img/favicon.png">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <!-- CSS Files -->
+    <link href="{{ asset('material') }}/css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="{{ asset('material') }}/demo/demo.css" rel="stylesheet" />
+    </head>
+    <body class="{{ $class ?? '' }}">
+        @auth()
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+            @include('layouts.page_templates.auth')
+        @endauth
+        @guest()
+            @include('layouts.page_templates.guest')
+        @endguest
+        
 
-    <title>{{ config('app.name', 'Sama') }}</title>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/sama.css') }}" rel="stylesheet">
-    <script src="{{ asset('js/bootstrap.js') }}" defer></script>
-    <script src="{{ asset('js/jquery-3.3.1.min.js') }}" defer></script>
-
-
-    <link rel="manifest" href="{{ asset('iOS/manifest.json') }}">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
-    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
-
-    <link rel="apple-touch-icon" href="{{ asset('images/sbs-img.png') }}" />
-    <link rel="apple-touch-startup-image" href="{{ asset('images/800x600.gif') }}">
-    <meta name="apple-mobile-web-app-title" content="SBS Portal">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="icon" href="{{ asset('images/sbs-img.png') }}">
-
-    <!-- Add to Homescreen -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('iOS/addtohomescreen.css') }}">
-    <script src="{{ asset('iOS/addtohomescreen.js') }}"></script>
-    <script>
-    addToHomescreen.removeSession();
-    instance.clearSession();
-    addToHomescreen();
-    addToHomescreen({
-        detectHomescreen: true
-    });
-    var a = addToHomescreen({
-        onAdd: function () {
-            alert('Welcome to Sama Business Services Portal.');
-        }
-    });
-    </script>
-    <!-- Add to Homescreen -->
-
-
-
-
-</head>
-<body>
-    <div id="app">
-        <nav style="background-color:#000111" class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Sama') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
-</body>
-
-<hr>
-
-<footer style="float:center;background-color:#ffffff">
-    <div class="copyright-samabusinessservices">
-        <div class="footer">
-            <div class="container">
-                <div id="ftr-wrap">
-                    <div class="ftr-links">
-                        <div class="row">
-                            <div class="col-xs-3 clearfix"> 
-                                <ul class="ml-auto" style="text-align: center;">                   
-                                    <span><a style="font-size:10px;" href="#">Terms</a></span>&nbsp;&nbsp;  | &nbsp;&nbsp;
-                                    <span><a style="font-size:10px;" href="#">Privacy Policy</a></span>&nbsp;&nbsp; | &nbsp;&nbsp;     
-                                    <span><a style="font-size:10px;" href="">Contact Us</a></span>&nbsp;&nbsp; | &nbsp;&nbsp;     
-                                    <span><a style="font-size:10px;" href="">API</a></span>&nbsp;&nbsp; | &nbsp;&nbsp;     
-                                    <span><a style="font-size:10px;" href="">Sitemap</a></span>     
-                                </ul>
-                            </div>
-                            <div class="col-lg-4 clearfix" style="text-align:center">
-                                <span>
-                                    <img width="90px" height="90px" src="{{ asset('images/cr.png') }}" />
-                                    <img style="margin-left:20px" width="75px" height="75px" src="{{ asset('images/sbs-img.png') }}" />
-                                    <!--            <img width="90px" height="85px" src="{{ asset('images/web.png') }}" />-->
-                                    <img width="110px" height="90px" src="{{ asset('images/800x600.gif') }}" />
-                                </span>
-                            </div>
-                            <div class="col-md-4 clearfix" style="float:left">
-                                <?='<span style="font-size:10px;padding-left:0px;">Copyright &copy; ' . date("Y") . ' <a href="/">Sama Business Servies Co.</a>.</span><span style="font-size:10px;class="copyright"> SA, Jeddah. C.R. 4030375691</span>';?>
-                            </div>
-                        </div>
-                    </div>                
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-
+        <!--   Core JS Files   -->
+        <script src="{{ asset('material') }}/js/core/jquery.min.js"></script>
+        <script src="{{ asset('material') }}/js/core/popper.min.js"></script>
+        <script src="{{ asset('material') }}/js/core/bootstrap-material-design.min.js"></script>
+        <script src="{{ asset('material') }}/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+        <!-- Plugin for the momentJs  -->
+        <script src="{{ asset('material') }}/js/plugins/moment.min.js"></script>
+        <!--  Plugin for Sweet Alert -->
+        <script src="{{ asset('material') }}/js/plugins/sweetalert2.js"></script>
+        <!-- Forms Validations Plugin -->
+        <script src="{{ asset('material') }}/js/plugins/jquery.validate.min.js"></script>
+        <!-- Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
+        <script src="{{ asset('material') }}/js/plugins/jquery.bootstrap-wizard.js"></script>
+        <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+        <script src="{{ asset('material') }}/js/plugins/bootstrap-selectpicker.js"></script>
+        <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
+        <script src="{{ asset('material') }}/js/plugins/bootstrap-datetimepicker.min.js"></script>
+        <!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
+        <script src="{{ asset('material') }}/js/plugins/jquery.dataTables.min.js"></script>
+        <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
+        <script src="{{ asset('material') }}/js/plugins/bootstrap-tagsinput.js"></script>
+        <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
+        <script src="{{ asset('material') }}/js/plugins/jasny-bootstrap.min.js"></script>
+        <!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
+        <script src="{{ asset('material') }}/js/plugins/fullcalendar.min.js"></script>
+        <!-- Vector Map plugin, full documentation here: http://jvectormap.com/documentation/ -->
+        <script src="{{ asset('material') }}/js/plugins/jquery-jvectormap.js"></script>
+        <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+        <script src="{{ asset('material') }}/js/plugins/nouislider.min.js"></script>
+        <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support SweetAlert -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+        <!-- Library for adding dinamically elements -->
+        <script src="{{ asset('material') }}/js/plugins/arrive.min.js"></script>
+        <!--  Google Maps Plugin    -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE'"></script>
+        <!-- Chartist JS -->
+        <script src="{{ asset('material') }}/js/plugins/chartist.min.js"></script>
+        <!--  Notifications Plugin    -->
+        <script src="{{ asset('material') }}/js/plugins/bootstrap-notify.js"></script>
+        <!-- Control Center for Sama Business Services: parallax effects, scripts for the example pages etc -->
+        <script src="{{ asset('material') }}/js/material-dashboard.js?v=2.1.1" type="text/javascript"></script>
+        <!-- Sama Business Services DEMO methods, don't include it in your project! -->
+        <script src="{{ asset('material') }}/demo/demo.js"></script>
+        <script src="{{ asset('material') }}/js/settings.js"></script>
+        @stack('js')
+    </body>
 </html>
