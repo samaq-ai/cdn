@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.com/samaq-ai/cdn.svg?branch=master)](https://travis-ci.com/samaq-ai/cdn)
 ![Sama Business Service Framework](https://github.com/samaq-ai/cdn/workflows/Main%20Framework/badge.svg?branch=master)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsamaq-ai%2Fcdn.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsamaq-ai%2Fcdn?ref=badge_shield)
 
 ## Sama Business Services Framework
 ____
@@ -59,3 +60,6 @@ composer require "dwij/laraadmin:1.0.40"
 	Dwij\Laraadmin\LAProvider::class
 ],
 ```
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsamaq-ai%2Fcdn.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsamaq-ai%2Fcdn?ref=badge_large)
