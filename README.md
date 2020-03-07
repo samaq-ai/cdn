@@ -1,5 +1,10 @@
+
+Copyright 2020 SBS Authors (https://github.com/samaq-ai/cdn/graphs/contributors)
+Licensed under MIT (https://github.com//samaq-ai/cdn/blob/master/LICENSE)
 [![Build Status](https://travis-ci.com/samaq-ai/cdn.svg?branch=master)](https://travis-ci.com/samaq-ai/cdn)
 ![Sama Business Service Framework](https://github.com/samaq-ai/cdn/workflows/Main%20Framework/badge.svg?branch=master)
+[![License](https://badges.mit-license.org/)](https://camo.githubusercontent.com/7564c4f51086d05c91ab09865b0ab1eaf457f172/68747470733a2f2f696d672e736869656c64732e696f2f3a6c6963656e73652d6d69742d626c75652e737667)
+
 
 ## Sama Business Services Framework
 ____
