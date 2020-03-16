@@ -1,10 +1,3 @@
-
-Copyright 2020 SBS Authors (https://github.com/samaq-ai/cdn/graphs/contributors)
-Licensed under MIT (https://github.com//samaq-ai/cdn/blob/master/LICENSE)
-
-
-
-
 [![Build Status](https://travis-ci.com/samaq-ai/cdn.svg?branch=master)](https://travis-ci.com/samaq-ai/cdn)
 ![Sama Business Service Framework](https://github.com/samaq-ai/cdn/workflows/Main%20Framework/badge.svg?branch=master)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsamaq-ai%2Fcdn.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsamaq-ai%2Fcdn?ref=badge_shield)
