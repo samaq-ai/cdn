@@ -1,9 +1,13 @@
 
 Copyright 2020 SBS Authors (https://github.com/samaq-ai/cdn/graphs/contributors)
 Licensed under MIT (https://github.com//samaq-ai/cdn/blob/master/LICENSE)
+
+
+
+
 [![Build Status](https://travis-ci.com/samaq-ai/cdn.svg?branch=master)](https://travis-ci.com/samaq-ai/cdn)
 ![Sama Business Service Framework](https://github.com/samaq-ai/cdn/workflows/Main%20Framework/badge.svg?branch=master)
-[![License](https://badges.mit-license.org/)](https://camo.githubusercontent.com/7564c4f51086d05c91ab09865b0ab1eaf457f172/68747470733a2f2f696d672e736869656c64732e696f2f3a6c6963656e73652d6d69742d626c75652e737667)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsamaq-ai%2Fcdn.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsamaq-ai%2Fcdn?ref=badge_shield)
 
 
 ## Sama Business Services Framework
@@ -64,3 +68,6 @@ composer require "dwij/laraadmin:1.0.40"
 	Dwij\Laraadmin\LAProvider::class
 ],
 ```
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsamaq-ai%2Fcdn.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsamaq-ai%2Fcdn?ref=badge_large)
